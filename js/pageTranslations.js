@@ -1,5 +1,8 @@
 const webviews = require('webviews.js')
+<<<<<<< HEAD
 const statistics = require('js/statistics.js')
+=======
+>>>>>>> repo-a/master
 
 const pageTranslations = {
   languages: [
@@ -85,8 +88,12 @@ const pageTranslations = {
     return [topLangs, otherLangs]
   },
   translateInto (tabId, language) {
+<<<<<<< HEAD
     statistics.incrementValue('translatePage.' + language)
 
+=======
+      
+>>>>>>> repo-a/master
     webviews.callAsync(tabId, 'send', ['translate-page', language])
   }
 }

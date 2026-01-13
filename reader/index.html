@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="Content-Security-Policy" content="script-src 'self'" />
-
     <meta name="theme-color" id="meta-theme" />
     <script src="../ext/readability-master/Readability.js"></script>
     <link rel="stylesheet" href="../css/base.css" />
@@ -15,7 +14,7 @@
   <body>
     <button
       id="settings-button"
-      class="i carbon:settings-adjust"
+      class="i bi bi-toggles2"
       data-label="buttonReaderSettings"
     ></button>
     <div id="settings-dropdown" hidden>
@@ -37,9 +36,10 @@
         ></button>
       </div>
       <div class="setting-section">
-        <input type="checkbox" id="auto-reader-checkbox" /><label
+        <input type="checkbox" id="auto-reader-checkbox"  class="form-check-input"/><label
           for="auto-reader-checkbox"
           data-string="openReaderView"
+        
         ></label>
       </div>
     </div>
@@ -60,8 +60,8 @@
     </div>
     <div id="backtoarticle">
       <a id="backtoarticle-link">
-        <i class="i carbon:chevron-left"></i>
-        <span data-string="articleReaderView"></span>
+        <i class="bi bi-skip-backward"></i>
+                       <span data-string="articleReaderView"></span>
       </a>
     </div>
 

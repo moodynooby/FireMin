@@ -9,23 +9,28 @@ html {
   margin-bottom: 1em;
 }
 
-.yellow-background {
-  background-color: rgb(250, 188, 43);
-}
 
 .short-hero {
   position: relative;
   overflow: hidden;
+  top: 0;
+  width:100% ;
+  font-family: "Zilla Slab", serif;
+  align-items: center;
+  display: flex;
+  height: 10%;
+  
 }
-.blue-gradient-background {
+.gradient-background {
   background: linear-gradient(
     135deg,
-    rgba(80, 122, 196, 1) 43%,
-    rgba(80, 122, 196, 1) 43%,
-    rgba(128, 192, 226, 1) 89%,
-    rgba(128, 192, 226, 1) 89%
+    #651012 29%,
+    #8E1719 34%,
+    #CB2023 55%,
+    #602728 95%
   );
   color: #fff;
+
 }
 
 .container {
@@ -36,7 +41,7 @@ html {
 
 .settings-container {
   max-width: 1000px;
-  margin: 2.25em auto;
+  margin: 1.25em auto;
   padding: 0 1em;
 }
 .settings-container .setting-option + .setting-option {
@@ -135,6 +140,9 @@ html {
 
 #content-blocking-information {
   margin: 0.75em 0.5em 0 1.58em;
+  display: flex;
+  align-items: baseline;
+  align-self: flex-end;
 }
 
 #content-blocking-information textarea {
@@ -153,9 +161,6 @@ html {
   max-width: 34em;
 }
 
-#restart-required-banner {
-  color: black;
-}
 
 #custom-bangs {
   list-style: none;
@@ -186,4 +191,59 @@ html {
   font-size: 1.5em !important;
   vertical-align: middle;
   margin-bottom: 0.2em;
+}
+.settings-nav {
+  position: fixed;
+  top: 120px;
+  left: 20px;
+  width: 250px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background: var(--background-color);
+  font-family: "Zilla Slab", serif;
+}
+
+.settings-nav .nav-link {
+  color: var(--text-color);
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  margin-bottom: 0.25rem;
+}
+
+.settings-nav .nav-link:hover {
+  color: #CB2023;
+  background-color: rgba(203, 32, 35, 0.1);
+  border-radius: 15px;
+}
+
+.settings-nav .nav-link.active {
+  font-weight: 500;
+  color: #fff;
+  background-color: #CB2023;
+  border-radius: 15px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .settings-nav {
+    background: #1c1c1c;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+  
+  .settings-nav .nav-link {
+    color: #e0e0e0;
+  }
+  
+  .settings-nav .nav-link:hover {
+    background-color: rgba(203, 32, 35, 0.2);
+  }
+}
+.settings-content {
+  padding: 20px;
+}
+.settings-container {
+  scroll-margin-top: 2rem;
+  padding: 20px;
+  margin-bottom: 30px;
 }

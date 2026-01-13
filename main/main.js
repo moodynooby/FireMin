@@ -26,7 +26,7 @@ crashReporter.start({
 })
 
 if (process.argv.some(arg => arg === '-v' || arg === '--version')) {
-  console.log('Min: ' + app.getVersion())
+  console.log('fireMin: ' + app.getVersion())
   console.log('Chromium: ' + process.versions.chrome)
   process.exit()
 }
@@ -82,7 +82,7 @@ const isFirstInstance = app.requestSingleInstanceLock()
 
 if (!isFirstInstance) {
   app.quit()
-  return
+  process.exit() // Use process.exit() instead of return
 }
 
 var saveWindowBounds = function () {
@@ -249,10 +249,13 @@ function createWindowWithBounds (bounds, customArgs) {
     mainView.setBounds({x: 0, y: 0, width: winBounds.width, height: winBounds.height})
   })
 
+<<<<<<< HEAD
   mainView.webContents.ipc.on('set-window-title', function(e, title) {
     newWin.title = title
   })
 
+=======
+>>>>>>> repo-a/master
   newWin.on('resize', function () {
     // The result of getContentBounds doesn't update until the next tick
     setTimeout(function () {

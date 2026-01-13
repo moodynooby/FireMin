@@ -1,4 +1,3 @@
-var statistics = require('js/statistics.js')
 var searchEngine = require('js/util/searchEngine.js')
 var urlParser = require('js/util/urlParser.js')
 
@@ -146,6 +145,7 @@ function setWindowTitle () {
   const task = tasks.getSelected()
   const tab = task.tabs.get(task.tabs.getSelected())
 
+<<<<<<< HEAD
   const truncateString = (str, len) => {
     if (str.length > len) {
       return str.substring(0, len) + '...'
@@ -163,6 +163,13 @@ function setWindowTitle () {
   if (document.title !== title) {
     document.title = title
     ipc.send('set-window-title', title)
+=======
+function setWindowTitle (taskData) {
+  if (taskData.name) {
+    document.title = (taskData.name.length > 100 ? taskData.name.substring(0, 100) + '...' : taskData.name)
+  } else {
+    document.title = 'fireMin'
+>>>>>>> repo-a/master
   }
 }
 
@@ -273,9 +280,6 @@ ipc.on('set-file-view', function (e, data) {
 
 searchbar.events.on('url-selected', function (data) {
   var searchbarQuery = searchEngine.getSearch(urlParser.parse(data.url))
-  if (searchbarQuery) {
-    statistics.incrementValue('searchCounts.' + searchbarQuery.engine)
-  }
 
   if (data.background) {
     var newTab = tabs.add({
