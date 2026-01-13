@@ -1,8 +1,4 @@
 const webviews = require('webviews.js')
-<<<<<<< HEAD
-const statistics = require('js/statistics.js')
-=======
->>>>>>> repo-a/master
 
 const pageTranslations = {
   languages: [
@@ -87,13 +83,7 @@ const pageTranslations = {
     const otherLangs = allLangs.filter(lang => !userPrefs.includes(lang.code) && lang.code !== 'en')
     return [topLangs, otherLangs]
   },
-  translateInto (tabId, language) {
-<<<<<<< HEAD
-    statistics.incrementValue('translatePage.' + language)
-
-=======
-      
->>>>>>> repo-a/master
+  translateInto(tabId, language) {
     webviews.callAsync(tabId, 'send', ['translate-page', language])
   }
 }
